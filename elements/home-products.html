@@ -1,0 +1,62 @@
+<dom-module id="home-products">
+    <style>
+    :host {
+        display: block;
+        position: relative;;
+        top:5vh;
+    }
+    .lowercase{
+        text-transform: lowercase;
+    }
+    
+    #products-container {}
+    
+    .neo-content {
+        padding: 8px 32px 8px 32px;
+    }
+    .button-container {
+        padding: 8px 32px 8px 32px;
+    }
+
+    paper-button:hover{
+        @apply(--shadow-elevation-6dp);
+    }
+    
+    @media and screen and (max-width: 480px) {
+        #products-container {}
+    }
+    
+    @media and screen and (max-width: 768px) {
+        #products-container {}
+    }
+    </style>
+    <template>
+        <div class="" id="products-container">
+            <h3 class="paper-font-display1 neo-content" style="font-weight:300;">Our Products are HALAL &amp; ISO-Certified</h3>
+            <p class="paper-font-body3 neo-content" style="font-weight:300;">Know More &amp; Get Them In Our eSTORE now</p>
+            <div class="button-container" style="">
+                <paper-button raised class="paper-font-body1" style="background-color:#11A861; color:white;">Visit <span class="lowercase">e</span>Store</paper-button>
+                <a href="/products">
+                <paper-button raised class="paper-font-body1" style="background-color:#469FD7; color:white;">Our Products</paper-button></a>
+            </div>
+            <div class="neo-content" style="justify-content:center; margin-top:16px; display:block;">
+                <div style="vertical-align:middle; display:inline-block; margin: 0 4px 0 4px"><img src="/images/icons/cert-haccp.png"></div>
+                <div style="vertical-align:middle; display:inline-block; margin: 0 4px 0 4px"><img src="/images/icons/cert-halal.png"></div>
+                <div style="vertical-align:middle; display:inline-block; margin: 0 4px 0 4px"><img src="/images/icons/cert-qms.png"></div>
+            </div>
+        </div>
+    </template>
+</dom-module>
+<script>
+(function() {
+    Polymer({
+        is: 'home-products',
+        properties: {
+            items: {
+                type: String,
+                notify: true,
+            }
+        }
+    });
+})();
+</script>

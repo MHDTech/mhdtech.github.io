@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!-- SC Kim Polymer Lite Kit -->
+<html>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SC's Blog | First Post</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Description" content="My First Post: Hello World!">
+    <meta name="Keywords" content="SCKim, Blog, Material Design, Polymer Blog">
+    <meta name="theme-color" content="#C2185B">
+    <!--     <base href="http://polygit.org/polymer+:master/components/"> -->
+    <!-- <link href="polymer/polymer.html" rel="import"> -->
+    <!--     <link href="http://polygit.org/polymer+:master/components/paper-material/paper-material.html" rel="import">
+    <link href="http://polygit.org/polymer+:master/components/paper-button/paper-button.html" rel="import">
+    <link href="http://polygit.org/polymer+:master/components/iron-icons/iron-icons.html" rel="import">
+    <link href="http://polygit.org/polymer+:master/components/paper-icon-button/paper-icon-button.html" rel="import">
+    <link href="http://polygit.org/polymer+:master/components/paper-toolbar/paper-toolbar.html" rel="import">
+    <link href="http://polygit.org/polymer+:master/components/paper-item/paper-item.html" rel="import">
+    <link href="http://polygit.org/polymer+:master/components/paper-menu/paper-menu.html" rel="import">
+    <link href="http://polygit.org/polymer+:master/components/paper-styles/paper-styles-classes.html" rel="import">
+    <link href="http://polygit.org/polymer+:master/components/paper-tabs/paper-tabs.html" rel="import">
+    <link href="my-list/my-list.html" rel="import"> -->
+    <link href="../../bower_components/paper-material/paper-material.html" rel="import">
+    <!-- <link href="../../bower_components/paper-button/paper-button.html" rel="import"> -->
+    <link href="../../bower_components/iron-icons/iron-icons.html" rel="import">
+    <link href="../../bower_components/paper-icon-button/paper-icon-button.html" rel="import">
+    <link href="../../bower_components/paper-toolbar/paper-toolbar.html" rel="import">
+    <link href="../../bower_components/paper-item/paper-item.html" rel="import">
+    <link href="../../bower_components/paper-menu/paper-menu.html" rel="import">
+    <link href="../../bower_components/paper-styles/paper-styles-classes.html" rel="import">
+    <link href="../../bower_components/paper-tabs/paper-tabs.html" rel="import">
+    <link href="../../bower_components/paper-menu/paper-submenu.html" rel="import">
+    <script src="../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link href="../nav-drawer-neo/nav-drawer-neo.html" rel="import">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body unresolved class="fullbleed" style="-webkit-tap-highlight-color: rgba(0,0,0,0);">
+    <div style="position:fixed;top:0px; width:100%;z-index:100;">
+        <paper-toolbar class="tall" style="background-color:#E91E63;">
+            <paper-icon-button icon="menu" id="menu-toggle"></paper-icon-button>
+            <div class="title">SC's Blog
+                <iron-icon icon="chevron-right"></iron-icon>Posts</div>
+            <paper-icon-button icon="more" on-tap="{{moreAction}}"></paper-icon-button>
+        </paper-toolbar>
+    </div>
+    <div id="backdrop"></div>
+    <div id="sidenav">
+        <nav-drawer-neo></nav-drawer-neo>
+    </div>
+    <div id="content" class="vertical layout" style="z-index:1000;-webkit-transform: translateZ(0);">
+        <paper-material elevation="1" class="rounded-fix white-paper blog-paper" style="margin-bottom:16px">
+            <div class="bottom-line" style="display:flex; padding:16px;">
+                <div class="avatar">:)</div>
+                <div class="avatar-detail">
+                    <div class="author-name">SC Kim</div>
+                    <div class="date">9th October 2015</div>
+                </div>
+            </div>
+            <div class="neo-content bottom-line rounded-fix">
+                <h1 class="paper-font-display2">My First Post: Hello World</h3>
+                <p class="paper-font-body2">
+                    Hi Peeps ! Thanks for dropping by this newly built Polymer page blog i have made. I abit aware of Github Pages Content Security Policy, but that's fine for me yet
+                    i'm pretty fond of it because i only wished this blog couldn't be crawled but could be seen by my very dearest ones or my friends. So here's my little intro. </p>
+                <p class="paper-font-body2">
+                    My name is SC Kim yet people normally called me Kim. I'm a nooooob photographer and programmer(but pretty lively one), and am a traveller. Before i go for university
+                    for computer science studies, i've been developing myself under XDA-Developers forum for mobile tweaking and customization. And recently, an alumni of Google Student
+                    Ambassador. Awesome Right?</p>
+                <h1 class="paper-font-display1">So What I gonna say here</h2>
+                <p class="paper-font-body2">
+                    I'll just explain a little introduction of this blog. I will divide the blog into two categories: <i>Technical</i> (yeap, tonnes of copi pasta codes and stuff reviews from myself) and <i>Personal</i> (some personal stuffs i would like to share including my thoughts, and travels). So hope you enjoyed reading stuffs.</p>
+
+                <div class="row">
+                <div class="column">
+                <h1 class="paper-font-display1">Anything more around this blog?</h2>
+                    <p class="paper-font-body2">
+                    In this blog, i simplified the navigation similarly to our mobile apps navigation drawer. No matter you're in phone or desktop, you may browse with unified experience of searching archives from the list. Here's little preview how it works:</p>
+                    <br>
+                    <p class="paper-font-body2">
+                    That's all for my first blog page for today! Until Next time Peeps! </p></div>
+                    <div class="screenshot-container">
+                        <img class="screenshot-img" height="480px" src="../images/mobile-nav-drawer.gif"></div>
+                </div>
+                
+            </div>
+        </paper-material>
+    </div>
+</body>
+
+</html>
+
+</body>
+    <script type="text/javascript" src="https://rawgit.com/ubenzer/sidenavjs/master/dist/sidenav.min.js"></script>
+<script src="../js/index.js"></script>
+</html>

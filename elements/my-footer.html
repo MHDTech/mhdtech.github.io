@@ -1,0 +1,52 @@
+<dom-module id="my-footer">
+    <style>
+    :host {
+        display: block;
+        background-color: #656565;
+        text-align: left;
+        color: white;
+        width: 100%;
+    }
+
+    .footer{
+    	padding: 48px;
+    	display: inline-block;
+    }
+
+    a{
+    	color:#F7941E;
+    }
+
+    @media only screen and (max-width: 768px){
+    	.footer{
+    		padding: 16px;
+    	}
+
+    	/*:host{
+    		text-align: center;
+    	}	*/
+    }
+    </style>
+    <template>
+        <div class="footer">
+            <p>Copyright © 2015 MyHealthDriver.Com. All Right Reserved.</p>
+            <p>EnerFlex is a registered trademark of MyHealthDriver.Com Sdn Bhd.</p>
+            <p>Site is developed and designed by SC.Kim </p>
+            <p>SiteMap | <a href="http://webmail.myhealthdriver.com/">Webmail</a></p>
+        </div>
+    </template>
+    <script>
+    (function() {
+        Polymer({
+            is: 'my-footer',
+            properties: {
+                items: {
+                    type: String,
+                    notify: true,
+                }
+            }
+
+        });
+    })();
+    </script>
+</dom-module>

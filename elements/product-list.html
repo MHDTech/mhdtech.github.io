@@ -1,0 +1,130 @@
+<dom-module id="product-list">
+    <style>
+    :host {
+        display: block;
+    }
+
+    .pro-header > h2{
+        color:#fff;
+        padding-top: 12vh;
+        padding-bottom: 8vh;
+        background-color: #4CAF50;
+        font-weight: 300;
+    }
+
+    .container-product{
+        display: inline-block;
+        max-width: 1160px;
+    }
+    
+    paper-card {
+        background-color: white;
+        max-width: 31.1%;
+        margin: 8px;
+        text-align: left;
+    }
+
+    .subtitle {
+        color: #656565;
+    }
+
+    .card-content > h2 {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+
+    .card-content > p {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+    
+    paper-card:hover {
+        @apply(--shadow-elevation-4dp);
+    }
+    paper-button {
+   
+        font-weight: 500;
+    }
+
+    .darkgrey {
+             color: #333;
+    }
+
+    
+    @media only screen and (max-width: 768px) {
+        paper-card {
+            max-width: calc(100% - 16px);
+            min-width: calc(99% - 16px);
+            margin: 8px 0 8px 0;
+        }
+    }
+    </style>
+    <template>
+        <section>
+            <!-- ROW 1 -->
+            <div class="pro-header">
+            <h2>Our Products</h2> </div>
+         <div class="container-product"> 
+            <template is="dom-repeat" items="{{products}}">
+                <paper-card image={{item.image}} elevation="1" animated-shadow="false">
+                    <div class="card-content">
+                    <h2 class="paper-font-headline">{{item.name}}</h2>
+                    <p class="paper-font-body2 subtitle">{{item.description}}</p></div>
+                    <div class="card-actions">
+                        <a href={{item.link}}><paper-button class="paper-font-body1 darkgrey">Learn More</paper-button></a>
+                        <a href={{item.link}}><paper-button class="paper-font-body1 darkgrey">Buy Now</paper-button></a>
+                    </div>
+                </paper-card>
+                </template>
+                <!-- <paper-card heading="Card title" image="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150" elevation="1" animated-shadow="false">
+                    <div class="card-content">Lorem Ipsum</div>
+                    <div class="card-actions">
+                        <paper-button>Learn More</paper-button>
+                    </div>
+                </paper-card>
+                <paper-card heading="Card title" image="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150" elevation="1" animated-shadow="false">
+                    <div class="card-content">Lorem Ipsum</div>
+                    <div class="card-actions">
+                        <paper-button>Learn More</paper-button>
+                    </div>
+                </paper-card> -->
+  
+        </section>
+    </template>
+    <script>
+        Polymer({
+            is: 'product-list',
+            ready: function() {
+            this.products = [{
+                image: '/images/products/original-cover.jpg',
+                name: 'EnerFlex Original',
+                description: 'http://lorem.com',
+                link: 'enerflex-original'
+            }, {
+                image: '/images/products/afa750-cover.jpg',
+                name: 'EnerFlex AFA750',
+                description: 'http://lorem.com',
+                link: 'enerflex-afa750'
+            }, {
+                image: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150',
+                name: 'Lorem 3',
+                description: 'http://lorem.com'
+            }, {
+                image: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150',
+                name: 'Lorem 4',
+                description: 'http://lorem.com'
+            }, {
+                image: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150',
+                name: 'Lorem 5',
+                description: 'http://lorem.com'
+            } , {
+                image: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150',
+                name: 'Lorem 6',
+                description: 'http://lorem.com'
+            }
+
+            ];
+        }
+
+        });
+    </script>

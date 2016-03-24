@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!-- SC Kim Polymer Lite Kit -->
+<html>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SC's Blog | Personal #1 </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Description" content="My First Post: Hello World!">
+    <meta name="Keywords" content="SCKim, Blog, Material Design, Polymer Blog">
+    <meta name="theme-color" content="#C2185B">
+    <!--     <base href="http://polygit.org/polymer+:master/components/"> -->
+    <!-- <link href="polymer/polymer.html" rel="import"> -->
+    <!--     <link href="http://polygit.org/polymer+:master/components/paper-material/paper-material.html" rel="import">
+    <link href="http://polygit.org/polymer+:master/components/paper-button/paper-button.html" rel="import">
+    <link href="http://polygit.org/polymer+:master/components/iron-icons/iron-icons.html" rel="import">
+    <link href="http://polygit.org/polymer+:master/components/paper-icon-button/paper-icon-button.html" rel="import">
+    <link href="http://polygit.org/polymer+:master/components/paper-toolbar/paper-toolbar.html" rel="import">
+    <link href="http://polygit.org/polymer+:master/components/paper-item/paper-item.html" rel="import">
+    <link href="http://polygit.org/polymer+:master/components/paper-menu/paper-menu.html" rel="import">
+    <link href="http://polygit.org/polymer+:master/components/paper-styles/paper-styles-classes.html" rel="import">
+    <link href="http://polygit.org/polymer+:master/components/paper-tabs/paper-tabs.html" rel="import">
+    <link href="my-list/my-list.html" rel="import"> -->
+    <link href="../../../bower_components/paper-material/paper-material.html" rel="import">
+    <link href="../../../bower_components/paper-button/paper-button.html" rel="import">
+    <link href="../../../bower_components/iron-icons/iron-icons.html" rel="import">
+    <link href="../../../bower_components/paper-icon-button/paper-icon-button.html" rel="import">
+    <link href="../../../bower_components/paper-toolbar/paper-toolbar.html" rel="import">
+    <link href="../../../bower_components/paper-item/paper-item.html" rel="import">
+    <link href="../../../bower_components/paper-menu/paper-menu.html" rel="import">
+    <link href="../../../bower_components/paper-styles/paper-styles-classes.html" rel="import">
+    <link href="../../../bower_components/paper-tabs/paper-tabs.html" rel="import">
+    <link href="../../../bower_components/paper-menu/paper-submenu.html" rel="import">
+    <script src="../../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link href="../../nav-drawer-neo/nav-drawer-neo.html" rel="import">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body unresolved class="fullbleed" style="-webkit-tap-highlight-color: rgba(0,0,0,0);">
+    <div style="position:fixed;top:0px; width:100%;z-index:100;">
+        <paper-toolbar class="tall" style="background-color:#E91E63;">
+            <paper-icon-button icon="menu" id="menu-toggle"></paper-icon-button>
+            <div class="title" id="bottomBar">SC's Blog
+                <iron-icon icon="chevron-right"></iron-icon>Posts<iron-icon icon="chevron-right"></iron-icon>Personal</div>
+            <paper-icon-button icon="more" on-tap="{{moreAction}}"></paper-icon-button>
+        </paper-toolbar>
+    </div>
+    <div id="backdrop"></div>
+    <div id="sidenav">
+        <nav-drawer-neo></nav-drawer-neo>
+    </div>
+    <div id="content" class="vertical layout" style="z-index:1000;-webkit-transform: translateZ(0);">
+        <paper-material elevation="1" class="rounded-fix white-paper blog-paper" style="margin-bottom:16px">
+            <div class="bottom-line" style="display:flex; padding:16px;">
+                <div class="avatar">:)</div>
+                <div class="avatar-detail">
+                    <div class="author-name">SC Kim</div>
+                    <div class="date">13th October 2015</div>
+                </div>
+            </div>
+            <div class="neo-content bottom-line rounded-fix">
+                <h3 class="paper-font-display2">Personal #1 : Things Around Me These Days</h3>
+                <p class="paper-font-body2">Life is never be bored as long you enjoyed the ride. But also could be very challenging these days.</p>
+                <p class="paper-font-body2">So what i have been up to after i finished my bachelor final year? I returned to university for studying Master Programme in Research, meanwhile kinda enrolled in mobile department for multiple project researchs and starting to provide module workshops for mobile development esp. Android. Thankfully, my certificate in Udacity for Android Development works for faculty yet allow me to join as part of team to updating module training materials. Yet i'm thankful for my supervisor who look up high on me in further development, yet he's really being kind to every students and providing many guidances for me to look through which fields i shall be delve for my master proposal and research.</p>
+                <h3 class="paper-font-display1">Yet, i'm bugged..</h3>
+                <p class="paper-font-body2">What happened to me, friends asking me? I probably lack of sleeps during day, yet active like owl in night. My head just keep flowed with ideas, codes haha. Could be possibly because i was travelling abroad yet being still not getting used to timezone changes and my body clock reset. Now, i need get some time to settle down and revert back to my 'normal' life: Get a cup of green tea, drink more water, sleep before 11pm without designing and coding, which is i'm currently doing hah! </p>
+                <h1 class="paper-font-display1">Why do i wanna do that?</h1>
+                <p class="paper-font-body2">What is currently most important thing for me now is moments with family. I'm seeing kids nowadays lowered their heads, holding smartphones/tablets instead of holding hands of their dearest ones, even during meal times or shopping around malls. When i'm seeing that, i'm somehow reflected myself in similar situation. I do admit i did that too similarly, but in different perspectives. I was maybe-pushy to things, flooded with projects, proposals, research and problems solving until i almost neglecting things or nice moments around me. And that's terrifying. So i was like a line of code which never have a semicolon for break.</p>
+                <p class="paper-font-body2">Now, i think i shall take a break with a semicolon. The problems will never be solved within a day, and things never stop for you. What is important now is enjoy the current moment with my families as time allows us. I remembered back what my senior in university taught me, which is to find an equilibrium point in our life.</p>
+                
+                
+            </div>
+        </paper-material>
+    </div>
+</body>
+
+</html>
+
+</body>
+<script type="text/javascript" src="https://rawgit.com/ubenzer/sidenavjs/master/dist/sidenav.min.js"></script>
+<script src="../../js/index.js"></script>
+</html>

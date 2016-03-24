@@ -1,0 +1,173 @@
+<dom-module id="home-downloads">
+    <style>
+    :host {
+        display: block;
+    }
+    .row{
+    	display: block;
+    }
+    .neo-content {
+        padding: 8px 32px 8px 32px;
+    }
+
+    #device-img{
+    	width: 100%;
+    }
+    
+    #container2 {
+        display: none;
+        text-align: left;
+        justify-content: center;
+        padding: 8px 32px 8px 32px;
+    }
+    
+    #container1 {
+        display: inline-block;
+        text-align: left;
+        vertical-align: middle;
+    }
+    
+    .paper-font-body3,
+    .paper-font-headline,
+    .paper-font-title,
+    .paper-font-display1 {
+        font-weight: 300;
+    }
+    
+    .paperbtn-container {
+        margin-top: 16px;
+        
+    }
+
+      paper-button:hover{
+        @apply(--shadow-elevation-6dp);
+    }
+
+    .paperbtn-container2 {
+        margin-top: 24px;
+  /*      display: flex;*/
+    }
+    
+    .pinkBtn {
+        background-color: #f7168a;
+        color: white;
+    }
+    /*.desktop-text-container {
+        background: url('/images/devices.png') no-repeat;
+        height: 280px;
+        width: 444px;
+        background-size: 100%;
+        background-position: 121% 100%;
+    }*/
+    
+    #device {
+    	display: inline-block;
+        padding-top: 43px;
+
+        vertical-align: middle;
+    }
+    
+    @media only screen and (min-width: 0px) and (max-width: 480px) and (orientation:portrait) {
+        #navBar {
+            display: none;
+        }
+        #device {
+            max-width: 98%;
+        }
+        #container2 {
+            display: inline-block;
+            padding-top: 32px;
+            /*max-width: calc(100vw - 16px);*/
+            text-align:center;
+        }
+    }
+    
+    @media only screen and (min-width: 480px) and (max-width: 768px) and (orientation:portrait) {
+        #container1 {
+            display: none;
+        }
+        #container2 {
+            display: inline-block;
+            padding-top: 24px;
+            /*max-width: calc(100vw - 16px);*/
+            text-align:center;
+        }
+    }
+    
+    @media only screen and (min-width: 0px) and (max-width: 768px) {
+        #container1 {
+            display: none;
+        }
+        #container2 {
+            display: inline-block;
+            padding-top: 32px;
+            /*max-width: calc(100vw - 16px);*/
+            text-align:center;
+        }
+        
+    }
+    
+    @media only screen and (max-width: 961px) and (orientation:landscape) {
+        #container1 {
+            display: none;
+        }
+        #container2 {
+            display: inline-block;
+            padding-top: 32px;
+            /*max-width: calc(100vw - 16px);*/
+            text-align:center;
+        }
+    }
+    
+    @media only screen and (min-width: 769px) and (orientation:portrait) {
+        #container2 {
+            display: none;
+        }
+        #container1 {
+            display: inline-block;
+        }
+        #device {
+        	display: inline-block;
+            max-width: 98%;
+            vertical-align: middle;
+        }
+    }
+    
+    }
+    </style>
+    <template>
+        <div class="row">
+            <div id="container2" class="column">
+                <span class="paper-font-headline">Brochure Softcopies Available</span>
+                <br>
+                <span class="paper-font-body3">English, Malay &amp; Chinese Contents are kindly provided</span>
+                <div class="paperbtn-container">
+                    <paper-button raised class="pinkBtn">GOTO DOWNLOAD SITE</paper-button>
+                </div>
+            </div>
+            <!-- <div class="desktop-text-container"></div> -->
+            <div id="device"><img id="device-img" src="/images/devices.png"></div>
+            <div id="container1" class="column neo-content">
+                <h2 class="paper-font-display1 ">Brochure Softcopies Available</h2>
+       
+                <p class="paper-font-body3 ">English, Malay &amp; Chinese Contents are kindly provided</p>
+                <div class="paperbtn-container2">
+                    <paper-button raised class="pinkBtn">Goto Download Site</paper-button>
+                </div>
+            </div>
+        </div>
+    </template>
+    </style>
+    <script>
+    (function() {
+        Polymer({
+            is: 'home-downloads',
+            properties: {
+                items: {
+                    type: String,
+                    notify: true,
+                }
+            }
+        });
+    })();
+    </script>

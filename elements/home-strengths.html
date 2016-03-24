@@ -1,0 +1,98 @@
+<dom-module id="home-strengths">
+    <style>
+    :host {
+        display: block;
+        background: #ECEFF1;
+        width: 100%;
+    }
+    
+    .neo-content {
+        padding: 8px 32px 8px 32px;
+    }
+    
+    .strength-container {
+        display: inline-block;
+        justify-content: center;
+    }
+    
+    .inner-container {
+        height: 320px;
+        /*width: calc(99% - 16px);*/
+        margin: 0px;
+        align-items: center;
+        /*display: flex;*/
+        justify-content: center;
+        max-width: 360px;
+    }
+    
+    .row {
+        display: block;
+    }
+    
+    .icon-wrapper {
+        padding: 30px;
+        border-radius: 50%;
+        background: #fff;
+        box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.1);
+        width: 120px;
+        height: 120px;
+        display: inline-block;
+        margin:24px 0 16px 0;
+    }
+
+    .icon{
+        padding: 24px;
+    }
+    </style>
+    <template>
+        <div style="margin-top:5vh;">
+            <p class="paper-font-display1 orange"> Our Strengths</p>
+        </div>
+        <div class="layout row" style="width:100%;">
+            <div class="flex strength-container">
+                <div class="inner-container">
+                    <div class="icon-wrapper">
+                        <img class="icon" src="/images/shopping-cart.jpg" height="72px">
+                    </div>
+                    <div class="neo-content">
+                        <p>Lorem Ipsum dolor sit amet consectetur adipiscing elit
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex strength-container">
+                <div class="inner-container">
+                    <div class="icon-wrapper">
+                        <img class="icon" src="/images/Delivery-Icon.png" height="72px">
+                    </div>
+                    <div class="neo-content">
+                        <p>Lorem Ipsum dolor sit amet consectetur adipiscing elit</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex strength-container">
+                <div class="inner-container">
+                    <div class="icon-wrapper">
+                        <img class="icon" src="/images/shopping-cart.jpg" height="72px">
+                    </div>
+                    <div class="neo-content">
+                        <p>Lorem Ipsum dolor sit amet consectetur adipiscing elit</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+</dom-module>
+<script>
+(function() {
+    Polymer({
+        is: 'home-strengths',
+        properties: {
+            items: {
+                type: String,
+                notify: true,
+            }
+        }
+    });
+})();
+</script>

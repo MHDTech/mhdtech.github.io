@@ -1,0 +1,68 @@
+<dom-module id="home-about">
+    <style>
+    :host {
+        display: block;
+    }
+    
+    .orange-btn {
+        background-color: #e1e1e1;
+    }
+    
+    .btn-container {
+        margin-top: 8px;
+    }
+    
+    .orange {
+        color: #F7941E;
+    }
+    
+      paper-button:hover{
+        @apply(--shadow-elevation-6dp);
+    }
+    
+    .inner-container {
+        display: inline-block;
+        text-align: left;
+        vertical-align: middle;
+    }
+
+    .inner-container > span {
+        display:block;
+    }
+
+    .neo-content {
+    padding: 8px 32px 8px 32px;
+}
+
+    .row{
+        display: block;
+    }
+    </style>
+    <template>
+        <div class="row" id="story-container">
+            <div style="padding:8px;" class="inner-container">
+                <img src="../images/products/product-page-original.png" height="160px">
+            </div>
+            <div class="inner-container neo-content">
+                <span class="paper-font-headline orange"><b><i>Nutrition Innovation Since 1992</i></b></span>
+                <span class="paper-font-body2 orange"><b><i>EnerFlex : Mind, Body, &amp; Soy</i></b></span>
+                <div class="btn-container">
+                    <paper-button raised class="orange paper-font-body1 orange-btn">Know More</paper-button>
+                </div>
+            </div>
+        </div>
+    </template>
+</dom-module>
+<script>
+(function() {
+    Polymer({
+        is: 'home-about',
+        properties: {
+            items: {
+                type: String,
+                notify: true,
+            }
+        }
+    });
+})();
+</script>

@@ -1,0 +1,199 @@
+<!-- Designed By SC.Kim © 2015 -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>EnerFlex® Original</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="Description" content="Just A Polymer Blog. Nothing Much">
+    <meta name="Keywords" content="SCKim, Blog, Material Design, Polymer Blog">
+    <meta name="theme-color" content="#FF9800">
+    <meta name="thumbnail" content="http://i1156.photobucket.com/albums/p580/whitefang3456/sckim-blog.png">
+    <meta name="og:image" content="http://i1156.photobucket.com/albums/p580/whitefang3456/sckim-blog.png">
+    <link href="../../elements/elements.html" rel="import">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="/bower_components/lightbox2/dist/css/lightbox.css" rel="stylesheet">
+    <script src="../../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" async></script>
+</head>
+<style is="custom-style">
+paper-toolbar {
+    --paper-toolbar-background: #fff;
+    /* changes the background to blue*/
+    --paper-toolbar-color: #0f0;
+    /* changes the foreground color to green */
+    /*--paper-toolbar: {
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+    }*/
+    ;
+    /* Notice the semicolon here */
+}
+
+body {
+    background: #f2f2f2;
+}
+
+paper-item {
+    --paper-item-selected: {
+        color: #ff9800;
+    }
+    ;
+}
+
+paper-tab {
+    --paper-tab-content-unselected: {
+        color: #333;
+    }
+}
+
+
+}
+</style>
+<style type="text/css">
+/*Nav Drawer JS*/
+
+.sn-visible .sn-backdrop {
+    display: block;
+}
+
+.sn-backdrop {
+    height: 600%;
+}
+
+.sn-sidenav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 256px;
+    height: 100%;
+    z-index: 1001;
+    overflow-y: auto;
+    will-change: transform;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+    background-color: #fff;
+    /*padding: 20px*/
+    /*    color: #fff;*/
+}
+
+.bottom-line {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.sn-content {
+    position: relative;
+    z-index: 100;
+}
+
+.sn-visible,
+.sn-visible body,
+.sn-visible .sn-content {
+    overflow: hidden;
+}
+</style>
+
+<body unresolved>
+    <div style="position:fixed;top:0px; width:100%;z-index:1000;">
+        <paper-toolbar id="topToolbar">
+            <paper-icon-button icon="icons:menu" id="menu-toggle"></paper-icon-button>
+            <div id="img-container">
+                <a href="/"><img id="banner" src="/images/mhd-bannerlogo.png"></a>
+            </div>
+            <div id="navBar">
+                <paper-tabs selected="0" class="orange" no-bar>
+                    <paper-tab><a href="/about">About</a></paper-tab>
+                    <paper-tab><a href="http://www.enerflex2u.com/sc" target="_blank">eStore</a></paper-tab>
+                    <paper-tab><a href="/products">Products</a></paper-tab>
+                    <paper-tab><a href="/download">Downloads</a></paper-tab>
+                    <paper-tab><a href="/#contact">Contact</a></paper-tab>
+                </paper-tabs>
+            </div>
+        </paper-toolbar>
+    </div>
+    <div id="backdrop"></div>
+    <div id="sidenav">
+        <div class="paper-font-title bottom-line">
+            <paper-toolbar style="background-color:#fff;">
+                <p class="paper-font-title" style="color:#9e9e9e">Menu</p>
+            </paper-toolbar>
+        </div>
+        <paper-menu>
+            <paper-item><a href="/">Home</a></paper-item>
+            <paper-item><a href="/about">About</a></paper-item>
+            <paper-submenu opened>
+                <paper-item class="menu-trigger">Our Products</paper-item>
+                <paper-menu selected="0" class="menu-content" style="margin-left:40px; padding:0px;">
+                    <paper-item><a href="/products/enerflex-original">EnerFlex Original</a></paper-item>
+                    <paper-item disabled>EnerFlex AFA</paper-item>
+                    <paper-item disabled>EnerFlex Plus</paper-item>
+                </paper-menu>
+            </paper-submenu>
+            <paper-submenu>
+                <paper-item class="menu-trigger">Clinical Stations</paper-item>
+                <paper-menu class="menu-content" style="margin-left:40px;">
+                    <paper-item disabled>#1: Things around me these days</paper-item>
+                    <!--           <paper-item>Topic 2</paper-item>
+          <paper-item>Topic 3</paper-item> -->
+                </paper-menu>
+            </paper-submenu>
+            <a href="#">
+                <paper-item>Downloads</paper-item>
+            </a>
+            <a href="#contact" id="mob-contact">
+                <paper-item>Contact</paper-item>
+            </a>
+        </paper-menu>
+    </div>
+    <div id="content" class="vertical layout" style="-webkit-transform: translateZ(0);">
+        <product-original></product-original>
+        </template>
+    </div>
+    <!-- Contacts & Map -->
+    <section id="siteMap">
+        <my-footer></my-footer>
+    </section>
+    <!-- <div id="fab" style="position:fixed; right:25px; bottom:8vh; z-index:100;">
+        <a href="#banner-sc">
+            <paper-fab title="Back To Top" icon="expand-less"></paper-fab>
+        </a>
+    </div> -->
+    <script async src="/bower_components/lightbox2/dist/js/lightbox-plus-jquery.js"></script>
+</body>
+<script src="../../js/sidenav.min.js"></script>
+<!-- <script src="js/index.js" async></script> -->
+<script type="text/javascript">
+"use strict";
+var sidenav = new Sidenav({
+    content: document.getElementById("content"),
+    sidenav: document.getElementById("sidenav"),
+    backdrop: document.getElementById("backdrop")
+});
+
+document.getElementById("menu-toggle").addEventListener("click", function() {
+    sidenav.open();
+}, true);
+
+document.getElementById('mob-contact').addEventListener("click", function() {
+    sidenav.close();
+}, true);
+
+document.getElementById('backdrop').addEventListener("click", function() {
+    sidenav.close();
+}, true);
+</script>
+<script type="text/javascript" async>
+$(window).scroll(function() {
+    if ($(window).scrollTop() > 140) {
+        $("#topToolbar").css('box-shadow', '0 2px 5px rgba(0,0,0,0.26)');
+        // $("#fab").style.display = "inherit";
+    }
+
+    if ($(window).scrollTop() < 140) {
+        $("#topToolbar").css('box-shadow', 'none');
+        // $("#fab").style.display = "inherit";
+    }
+});
+</script>
+
+</html>

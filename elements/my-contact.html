@@ -1,0 +1,157 @@
+<dom-module id="my-contact">
+    <style>
+    :host {
+        display: block;
+        background: #e0e0e0;
+        padding-bottom: 10vh;
+        padding-top: 32px;
+    }
+    
+    .column {
+        display: -webkit-inline-block;
+    }
+    
+    paper-material {
+        background-color: white;
+    }
+    
+    paper-button {
+        float: right;
+    }
+    
+    #map-wrapper {
+        width: 567px;
+        height: 598px;
+    }
+    
+    .inner-container {
+        display: -webkit-inline-box;
+        text-align: left;
+        padding: 8px;
+        /*        vertical-align: middle;*/
+    }
+    
+    .inner-container > span {
+        display: block;
+    }
+    
+    .neo-content {
+        padding: 8px 16px 8px 16px;
+        border-bottom: #e1e1e1 solid 1px;
+    }
+    
+    .blue {
+        color: #2962FF;
+    }
+    
+    .row {
+        display: block;
+    }
+    
+    .neo-content > h3 {
+        white-space: pre-line;
+    }
+    
+    .neo-content > p > span {
+        color: grey;
+    }
+    
+    .neo-content > p {
+        color: #666666;
+    }
+    
+    #map-container {
+        display: inline-box;
+        padding: 0px;
+    }
+
+    a{
+        color:#0D47A1;
+    }
+    
+    @media only screen and (max-width: 768px) {
+        google-map {
+            width: calc(100vw - 16px);
+            height: 360px;
+        }
+        #map-wrapper {
+            width: 100%;
+            height: 300px;
+        }
+        .inner-container {
+            display: inline-block;
+            padding: 0px;
+        }
+    }
+    </style>
+    <template>
+        <div style="margin-top:5vh;">
+            <p class="paper-font-display1 orange"> Contact Us</p>
+        </div>
+        <div class="row">
+            <div class="inner-container">
+                
+                <div class="column">
+                    <div id="map-container">
+                        <!--  <paper-material elevation="1" > -->
+                        <google-map latitude="3.2110225" longitude="101.6045146" zoom="18" fit-to-markers id="map-wrapper" >
+                            <google-map-marker open="true" latitude="3.211018" longitude="101.605060" draggable="false" title="Headings">
+                                <div id="map-container">
+                                    <p><b>MyHealthDriver.Com Sdn.Bhd</b></p>
+                                    <p>No 12, Jalan IDA 1B, <br> Industri Desa Aman, <br>  Kepong, 52200 Kuala Lumpur, Malaysia.
+                                       </p>
+                                    <a href="https://www.google.com.my/maps/place/MyHealthDriver.com+Sdn.+Bhd/@3.2110212,101.6044804,243m/data=!3m1!1e3!4m2!3m1!1s0x31cc45e7fab04033:0x354cb6a8b704127!10m1!1e1?hl=en" target="_blank">
+                                        <paper-button class="blue">
+                                            <iron-icon icon="icons:open-in-new"></iron-icon> Open Maps</paper-button>
+                                    </a>
+                                </div>
+                            </google-map-marker>
+                        </google-map>
+                        <!--       </paper-material> -->
+                    </div>
+                </div>
+                <paper-material elevation="1">
+                    <div class="column">
+                        <div class="neo-content">
+                            <h3><iron-icon icon="maps:map"></iron-icon> Address : </h3>
+                            <p>MyHealthDriver.Com Sdn.Bhd
+                                 <br>
+                        No 12, Jalan IDA 1B, <br> Industri Desa Aman, <br>  Kepong, 52200 Kuala Lumpur, Malaysia.</p>
+                        </div>
+                        <div class="neo-content">
+                            <h3><iron-icon icon="icons:account-circle"></iron-icon> Contact Person : </h3>
+                            <p>Mr. Kim Lin Keong
+                                <span class="gray">( Founder CEO <br>
+                        Consultant Nutritionist / Iridologist )</span></p>
+                        </div>
+                        <div class="neo-content">
+                            <h3><iron-icon icon="icons:mail"></iron-icon> Email :</h3>
+                            <p><a href="mailto:kimlk@myhealthdriver.com">mailto:kimlk@myhealthdriver.com</a></p>
+                        </div>
+                        <div class="neo-content">
+                            <h3><iron-icon icon="icons:icons:perm-phone-msg"></iron-icon> Contact :</h3>
+                            <p>Mobile: +6012-3086117 (WhatsApp Available)</p>
+                            <p>Office: +603-62625991</p>
+                            <p>Fax: +6012-2546178</p>
+                        </div>
+                    </div>
+                </paper-material>
+            </div>
+        </div>
+        </div>
+    </template>
+    <script>
+    (function() {
+        Polymer({
+            is: 'my-contact',
+            properties: {
+                items: {
+                    type: String,
+                    notify: true,
+                }
+            }
+
+        });
+    })();
+    </script>
+</dom-module>

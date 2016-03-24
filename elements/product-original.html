@@ -1,0 +1,358 @@
+<link href="../bower_components/iron-pages/iron-pages.html" rel="import">
+<!-- <script async src="/bower_components/lightbox2/dist/js/lightbox.js"></script>
+<link href="/bower_components/lightbox2/dist/css/lightbox.css" rel="stylesheet"> -->
+<dom-module id="product-original">
+    <style>
+    :host {
+        display: block;
+        text-align: center;
+        background: #f2f2f2;
+        /*        margin-top: 8vh;*/
+        --paper-tab-ink: rgba(255,152,0,0.1);
+        --paper-tabs-selection-bar-color:#ff9800;
+        margin-bottom: 10vh;
+    }
+    
+    .orange {
+        color: #FF9800;
+    }
+    
+    .header > h2 {
+        color: #fff;
+        padding-top: 15vh;
+        padding-bottom: 15vh;
+        background-color: #ff9800;
+        /*font-weight: 300;*/
+        /*    font-family: 'Arial', 'sans-serif';*/
+    }
+    
+    .container {
+        position: relative;
+        top: -10vh;
+    }
+    
+    .paper-font-title {
+        white-space: inherit;
+    }
+    
+    paper-item.paper-item-0[disabled] {
+        color: #333;
+    }
+    
+    paper-icon-button {
+        color: #E91E63;
+    }
+    
+    paper-icon-button:hover {
+        background: rgba(91, 12, 39, 0.2);
+        border-radius: 50%;
+    }
+    
+    .row > div {
+        /*       display: inline-block;*/
+        /*        position: relative;*/
+        padding: 8px;
+    }
+    
+    iframe {
+        border: none;
+    }
+    
+    paper-material {
+        width: 100%;
+        max-width: 920px;
+        /*padding: 16px;*/
+        background: white;
+        text-align: left;
+        border-bottom: solid 1px #e1e1e1;
+        display: inline-block;
+        vertical-align: middle;
+        border-radius: 2px;
+        border-top: solid 8px #FFCC80;
+    }
+    
+    .content {
+        padding: 16px 24px 16px 24px;
+        text-align: justify;
+    }
+    
+    .row {
+        display: inline-block;
+    }
+    
+    .img-product {
+        vertical-align: middle;
+        display: inline-block;
+        width: 240px;
+        text-align: center;
+    }
+    
+    .overview {
+        display: inline-block;
+        vertical-align: middle;
+        width: calc(86% - 160px)
+    }
+    
+    .img-container {
+        text-align: center;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    
+    .img-container > img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .size {
+        float: left;
+    }
+    
+    .language {
+        float: left;
+    }
+    
+    .icon {
+        float: left;
+        position: relative;
+        top: 8px;
+        float: left;
+        left: 8px;
+    }
+    
+    #desktop {
+        display: inline-block;
+    }
+    
+    .teal {
+        color: #009688;
+    }
+    
+    .text-body {
+        width: 360px;
+        display: inline-block;
+        vertical-align: top;
+    }
+    
+    .img-desc > .img-container {
+        display: inline-block;
+        max-width: 48%;
+        vertical-align: middle;
+        margin-left: 16px;
+    }
+    
+    iframe {
+        width: 100%;
+        height: 600px;
+    }
+    
+    @media only screen and (max-width: 320px) and (orientation:portrait) {
+        .mobile-item {
+            max-width: 120px;
+            min-width: 50%;
+        }
+        .mobile-icon {
+            top: 32px;
+        }
+        .mobile-download {
+            top: 32px;
+        }
+    }
+    
+    @media only screen and (max-width: 768px) {
+        paper-material {
+            width: calc(100% - 16px);
+        }
+        .filename {
+            min-width: 240px;
+            max-width: 360px;
+        }
+        .icon-wrapper {
+            width: 48px;
+            height: 48px;
+            top: 12px;
+        }
+        .icon-wrapper > b {
+            top: 12px;
+        }
+        span {
+            white-space: pre;
+        }
+        .img-container {
+            max-width: 100%;
+        }
+        .row {
+            display: block;
+        }
+        .img-product {
+            text-align: center;
+            display: block;
+        }
+        .overview {
+            width: 100%;
+        }
+        .img-desc > .img-container {
+            max-width: 100%;
+            margin-left: 0px;
+        }
+        .text-body {
+            width: 100%;
+        }
+    }
+    
+    @media only screen and (max-width: 768px) and (orientation:landscape) {
+        :host {
+            /*            margin-top: 20vh;*/
+        }
+        .header {
+            margin-top: 15vh;
+        }
+        .filename {
+            min-width: 180px;
+            max-width: 200px;
+        }
+        .language {
+            min-width: 100px;
+            max-width: 120px;
+            text-align: left;
+        }
+    }
+    </style>
+    <template>
+        <div class="header">
+            <h2 class="paper-font-headline">EnerFlex® Original : Restore Fundamentals
+            </h2>
+        </div>
+        <div class="container">
+            <paper-material elevation="0" id="desktop">
+                <!--                     <h2 class="content">EnerFlex® Original : Restore Fundamentals</h2> -->
+                <div>
+                    <paper-tabs class="orange" selected="{{selected}}" scrollable>
+                        <paper-tab>Product Overview</paper-tab>
+                        <paper-tab>Unique Differentiation</paper-tab>
+                        <paper-tab>Functional Bio-factors</paper-tab>
+                        <paper-tab>Evidence-based-food</paper-tab>
+                        <paper-tab>Clinical Studies</paper-tab>
+                        <paper-tab>Consultation Chart</paper-tab>
+                    </paper-tabs>
+                </div>
+                <iron-pages selected="{{selected}}" class="content">
+                    <div id="overview">
+                        <h2 class="paper-font-title teal">Everything begins with the miraculous cure of the Founder's Asthma disease</h2>
+                        <div class="row">
+                            <div class="img-product"><img src="../images/products/product-page-original.png" height="160px"></div>
+                            <div class="overview">
+                                <p class="paper-font-body1">Scientifically formulated palatable premixed organic based soybean powder consumed as a beverage for general wellness from the inside, beauty on the outside. Complete protein food for children’s growth and vegetarians, for tissue repair in physical injuries or post-surgery. Rich in omega 3 fatty acid (in the form of alpha-linolenic acid of which to be converted to DHA and EPA in the body) and soy oligosaccharide as prebiotic to boost healthy and balance gut micro flora especially the Bifidobacterium spp for healthy bowel movements and immune system. EnerFlex is having optimum protein - carbohydrate ratio of 0.6 - 1.0.</p>
+                                <p class="paper-font-body1">Scientific research has highlighted the potential benefits of soy in reducing serum total and low density lipoprotein (LDL) cholesterol, and the use of health claims for this effect has been approved in Japan, the USA, the UK, South Africa, Brazil, Philippines, Indonesia, Korea, Chile, Malaysia and Colombia. While soy is a traditional part of the Asian diet, the advance in food science and technology has led to the development of a number of different products containing soy to meet consumer demands for nutrition and wellbeing including in the prevention and treatment of breast cancer, prostate cancer and osteoporosis.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="unique-diff">
+                        <h2 class="paper-font-title teal">Unique differentiation from ordinary soy products</h2>
+                        <ul class="paper-font-body1">
+                            <li>Scientific studied soy based formulations in improving human health and chronic illnesses such as hypercholesterolemia, hypertension, diabetes, cancer care, knee care, immune system enhancer, gastrointestinal health (gastric, gastroesophageal reflux disease, chronic constipation, irritable bowel syndrome), skin health and slimming without crash-dieting and “yo-yo effect”</li>
+                            <li>Gout and renal friendly with soybean embryo being removed </li>
+                            <li>Trusted and recommended by medical professionals (medical doctors, pharmacists, nutritionists and dietitians) since 2001</li>
+                            <li>Product innovation since year 1992 for long-term safety use with product efficacy above 80%</li>
+                            <li> Compliance to European International Quality (ISO9001: UKAS) and Global Food Safety Standard (RvA HACCP)</li>
+                            <li>No grassy and beanie smell No after-taste feeling</li>
+                        </ul>
+                    </div>
+                    <div id="functional-bio">
+                        <h2 class="paper-font-title teal">Functional Bio-factors behind EnerFlex</h2>
+                        <div class="img-container"><img src="http://www.myhealthdriver.com/product/enerflex-original/images/functional-bio-factor-in-enerflex.png"></div>
+                        <h2 class="paper-font-title orange">Soy Isoflavones</h2>
+                        <div class="img-desc">
+                            <div class="text-body">
+                                <p class="paper-font-body1">Soy isoflavone glycosides are called genistin, daidzin, and glycitin, while the aglycones are called <b>genistein, daidzein, and glycitein - active form of isoflavones</b></p>
+                            </div>
+                            <div class="img-container"><img src="/images/products/original/soy-isoflavones-01.png"></div>
+                        </div>
+                        <div class="img-desc">
+                            <div class="text-body">
+                                <p class="paper-font-body1">The structure of isoflavones is not exactly the same as estrogen, so isoflavones are not estrogen. However, the isoflavone structire has important similarities to estrogen. These similarities <b>allow isoflavones to bind to estrogen receptors in our estrogen-responsive cells.</b></p>
+                            </div>
+                            <div class="img-container"><img src="/images/products/original/soy-isoflavones-02.png"></div>
+                        </div>
+                        <h2 class="paper-font-title orange">Soy Lecithin</h2>
+                        <div class="img-desc">
+                            <div class="text-body">
+                                <p class="paper-font-body1">Soy lecithin ......</b>
+                                </p>
+                            </div>
+                            <div class="img-container"><img src="/images/products/original/soy-lecithin-01.png"></div>
+                        </div>
+                        <div class="img-desc">
+                            <div class="text-body">
+                                <p class="paper-font-body1">Total cholesterol (TC, mg/dL) and cheolesterol concentration in lipoprotein (mg/dL) in serum before and after the first and teh second months of lecithin admistration. *Significant in relation to the period before treatment The results showed a reduction of 40.66% and 42.00% in total cholesterol and of 42.05% and 56.15% in LDL cholesterol after treatment for one and two months, respectively.</b>
+                                </p>
+                            </div>
+                            <div class="img-container"><img src="/images/products/original/soy-lecithin-02.png"></div>
+                        </div>
+                    </div>
+                    <div id="food-evidence">
+                        <h2 class="paper-font-title teal">Soy is Evidence-based Functional Food</h2>
+                        <p class="paper-font-caption">[Click the images to enlarge]</p>
+                        <h2 class="paper-font-title orange">i. Heart Health</h2>
+                        <a href="/images/products/original/heart-health.png" data-lightbox="heart" data-title="Heart Health - 1"><img src="/images/products/original/heart-health.png" width="30%"></a>
+                        <a href="/images/products/original/soy-is-anti-atherosclerosis.jpg" data-lightbox="heart" data-title="Heart Health - 2"><img src="/images/products/original/soy-is-anti-atherosclerosis.jpg" width="30%"></a>
+                        <a href="/images/products/original/soy-is-cardio-protective.jpg" data-lightbox="heart" data-title="Heart Health - 3"><img src="/images/products/original/soy-is-cardio-protective.jpg" width="30%"></a>
+                        <h2 class="paper-font-title orange">ii. Breast Cancer</h2>
+                        <a href="/images/products/original/soy-protects-against-breast-cancer.jpg" data-lightbox="breast" data-title="Breast Cancer - 1"><img src="/images/products/original/soy-protects-against-breast-cancer.jpg" width="30%"></a>
+                        <a href="/images/products/original/shanghai-breast-cancer-survival-study.jpg" data-lightbox="breast" data-title="Breast Cancer - 2"><img src="/images/products/original/shanghai-breast-cancer-survival-study.jpg" width="30%"></a>
+                        <a href="/images/products/original/soy-reduces-breast-cancer-risk.jpg" data-lightbox="breast" data-title="Breast Cancer - 3"><img src="/images/products/original/soy-reduces-breast-cancer-risk.jpg" width="30%"></a>
+                        <h2 class="paper-font-title orange">iii. Prostate Cancer</h2>
+                        <a href="/images/products/original/soy-reduces-prostate-cancer-risk.jpg" data-lightbox="prostate" data-title="Prostate Cancer - 1"><img src="/images/products/original/soy-reduces-prostate-cancer-risk.jpg" width="30%"></a>
+                        <a href="/images/products/original/prostate-health.jpg" data-lightbox="prostate" data-title="Prostate Cancer - 2"><img src="/images/products/original/prostate-health.jpg" width="30%"></a>
+                        <a href="/images/products/original/prostate-health2.jpg" data-lightbox="prostate" data-title="Prostate Cancer - 3"><img src="/images/products/original/prostate-health2.jpg" width="30%"></a>
+                         <h2 class="paper-font-title orange">iv. Osteoporosis</h2>
+                        <a href="/images/products/original/osteoporosis.jpg" data-lightbox="osteo" data-title="Osteoporosis - 1"><img src="/images/products/original/osteoporosis.jpg" width="30%"></a>
+                        <a href="/images/products/original/epidemiologic-studies.jpg" data-lightbox="osteo" data-title="Osteoporosis - 2"><img src="/images/products/original/epidemiologic-studies.jpg" width="30%"></a>
+                        <h2 class="paper-font-title orange">v. Natural Hormone Replacement Therapy</h2>
+                        <a href="/images/products/original/menopausal-syndrome.jpg" data-lightbox="hormone" data-title="Menopausal Syndrome"><img src="/images/products/original/menopausal-syndrome.jpg" width="30%"></a>
+                    </div>
+                    <div id="clinical-studies">
+                        <a href="/images/products/original/cholesterol-lowering.jpg" data-lightbox="clinical"><img src="/images/products/original/cholesterol-lowering.jpg" width="45%"></a>
+                        <a href="/images/products/original/cholesterol-lowering2.jpg" data-lightbox="clinical"><img src="/images/products/original/cholesterol-lowering.jpg" width="45%"></a>
+                        <a href="/images/products/original/cholesterol-lowering3.jpg" data-lightbox="clinical"><img src="/images/products/original/cholesterol-lowering3.jpg" width="45%"></a>
+                        <a href="/images/products/original/cholesterol-lowering4.jpg" data-lightbox="clinical"><img src="/images/products/original/cholesterol-lowering4.jpg" width="45%"></a>
+                        <a href="/images/products/original/cholesterol-lowering5.jpg" data-lightbox="clinical"><img src="/images/products/original/cholesterol-lowering5.jpg" width="45%"></a>
+                        <a href="/images/products/original/cholesterol-lowering6.jpg" data-lightbox="clinical"><img src="/images/products/original/cholesterol-lowering6.jpg" width="45%"></a>
+                        <a href="/images/products/original/cholesterol-lowering7.jpg" data-lightbox="clinical"><img src="/images/products/original/cholesterol-lowering7.jpg" width="45%"></a>
+                        <a href="/images/products/original/cholesterol-lowering8.jpg" data-lightbox="clinical"><img src="/images/products/original/cholesterol-lowering8.jpg" width="45%"></a>
+                        <a href="/images/products/original/cholesterol-lowering8.jpg" data-lightbox="clinical"><img src="/images/products/original/cholesterol-lowering8.jpg" width="45%"></a>
+                        <a href="/images/products/original/cholesterol-lowering9.jpg" data-lightbox="clinical"><img src="/images/products/original/cholesterol-lowering9.jpg" width="45%"></a>
+                        <a href="/images/products/original/cholesterol-lowering10.jpg" data-lightbox="clinical"><img src="/images/products/original/cholesterol-lowering10.jpg" width="45%"></a>
+                        <a href="/images/products/original/cholesterol-lowering11.jpg" data-lightbox="clinical"><img src="/images/products/original/cholesterol-lowering11.jpg" width="45%"></a>
+                        <a href="/images/products/original/cholesterol-lowering12.jpg" data-lightbox="clinical"><img src="/images/products/original/cholesterol-lowering12.jpg" width="45%"></a>
+                        <!-- <img src="/images/products/original/cholesterol-lowering3.jpg" data-lightbox="clinical">
+                            <img src="/images/products/original/cholesterol-lowering4.jpg" data-lightbox="clinical">
+                            <img src="/images/products/original/cholesterol-lowering5.jpg" data-lightbox="clinical">
+                            <img src="/images/products/original/cholesterol-lowering6.jpg" data-lightbox="clinical">
+                            <img src="/images/products/original/cholesterol-lowering7.jpg" data-lightbox="clinical">
+                            <img src="/images/products/original/cholesterol-lowering8.jpg" data-lightbox="clinical">
+                            <img src="/images/products/original/cholesterol-lowering9.jpg" data-lightbox="clinical">
+                            <img src="/images/products/original/cholesterol-lowering10.jpg" data-lightbox="clinical">
+                            <img src="/images/products/original/cholesterol-lowering11.jpg" data-lightbox="clinical">
+                            <img src="/images/products/original/cholesterol-lowering12.jpg" data-lightbox="clinical"> -->
+                    </div>
+                    <div id="consultation">
+                        <!-- <iframe src="https://docs.google.com/presentation/d/16UVe_ZB-W6jvM7zLfnBhOFjInolFyOETUetHomOc1xM/embed?start=false&loop=false&delayms=60000" frameborder="0" width="900" height="auto" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> -->
+                        <iframe src="consultation-chart.html"></iframe>
+                    </div>
+                </iron-pages>
+            </paper-material>
+        </div>
+    </template>
+    <script>
+    Polymer({
+        is: 'product-original',
+        properties: {
+            selected: {
+                type: Number,
+                value: 0
+            }
+        }
+    });
+    </script>
+</dom-module>

@@ -1,0 +1,150 @@
+<head>
+    <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['table']}]}"></script>
+
+    <head>
+        <style type="text/css">
+        .google-visualization-table-table {
+            font-family: 'Roboto', 'sans-serif', font-size: 12px;
+            line-height: 16px;
+        }
+        
+        .google-visualization-table-tr-head {
+            height: 36px;
+            background-color: #3F51B5;
+            color: white;
+        }
+        
+        .google-visualization-table .gradient {
+            background-image: none;
+        }
+        
+        .google-visualization-table-tr-over {
+            background-color: rgba(255, 152, 0, 0.1)
+        }
+        </style>
+
+        <body>
+            <div id="table_div"></div>
+
+            <body>
+                <script type="text/javascript">
+                google.setOnLoadCallback(drawTable);
+
+                function drawTable() {
+                    var data = new google.visualization.DataTable();
+                    data.addColumn('string', 'Enerflex');
+                    data.addColumn('string', 'Complexion');
+                    data.addColumn('string', 'Contour');
+                    data.addColumn('string', 'Probiotic');
+                    data.addColumn('string', 'Original');
+                    data.addColumn('string', 'D-Diet');
+                    data.addColumn('string', 'AFA 750');
+                    data.addColumn('string', 'Forte');
+                    data.addColumn('string', 'Procardo/Ex-Fibre');
+                    data.addRows([
+                        ['Complexion',
+                            'Skin Complexion, Anti-Aging, Knee Osteoarthritis, Weak LowerBack, Women & Men Heatlh, Sports Nutrition, Hormonal Imbalance',
+                            'Sliming with anti-aging/great skin completion',
+                            'Stomach, Intestines & Colon health with Anti-aging, Acne problems',
+                            null,
+                            null,
+                            'Severe Knee Osteoathritis, Severe Acne Scar, Keloids Scar',
+                            null,
+                            'Heart & General Health, Anti-Aging'
+                        ],
+                    ]);
+                    data.addRows([
+                        ['Contour',
+                            'Sliming with anti-aging',
+                            'Sliming & Health',
+                            'Slimming with big tummy, Slimming with constipation problem',
+                            null,
+                            null,
+                            null,
+                            null,
+                            null
+                        ],
+                    ]);
+                    data.addRows([
+                        ['Probiotic',
+                            'Stomach, Intestines, Colon Health with Anti-Aging, Acne-problems',
+                            'Sliming with big tummy, Sliming with constipation problem',
+                            'Constipation, Piles, Gastrics, Heartburn/GERD, Allergy',
+                            'General & Colon Health',
+                            null,
+                            'Colitis, IBS, Infections, Severe Gastric/GERD Problems',
+                            'Premium, General and Colon Health',
+                            null
+                        ],
+                    ]);
+                    data.addRows([
+                        ['Original',
+                            null,
+                            null,
+                            'General and Colon Health',
+                            'Vegetarian Health, General Health, High BP',
+                            null,
+                            'Healthy sperms for fertility',
+                            'Premium Vegetarian / General Health',
+                            'Heart and General Health '
+                        ],
+                    ]);
+                    data.addRows([
+                        ['D-Diet',
+                            null,
+                            null,
+                            null,
+                            null,
+                            'Liver Health, Smokers, Alcohol drinkers',
+                            null,
+                            null,
+                            '1-Stop Diabetis Health, Fatty Liver '
+                        ],
+                    ]);
+                    data.addRows([
+                        ['AFA750',
+                            'Stomach, Intestines and Colon Health with Anti-aging, Acne problems',
+                            'Slimming with big tummy, Slimming with constipation problem ',
+                            'Constipation, Piles, Gastric, Heartburn/ GERD, Allergy',
+                            'General and Colon Health',
+                            null,
+                            'Colitis, IBS, Infections, Severe Gastric / GERD problems ',
+                            '1-Stop Diabetis Health, Fatty Liver ',
+                            null
+                        ],
+                    ]);
+                    data.addRows([
+                        ['Forte',
+                            null,
+                            null,
+                            'Premium General and Colon Health',
+                            'Premium Vegetarian /General Health',
+                            null,
+                            null,
+                            'IQ, High BP, Alertness',
+                            'Premium Vegetarian /General Health'
+                        ],
+                    ]);
+                    data.addRows([
+                        ['Procardo/Ex-Fibre',
+                            'Heart and General Health, Anti-aging',
+                            null,
+                            null,
+                            'Heart and General Health',
+                           'Diabetes Health, Fatty Liver',
+                            null,
+                            'Premium Vegetarian / General Health',
+                            'Lowers LDL/TG'
+                        ],
+                    ]);
+
+
+                    var table = new google.visualization.Table(document.getElementById('table_div'));
+
+                    table.draw(data, {
+                        showRowNumber: true,
+                        width: '100%',
+                        height: '100%'
+                    });
+                }
+                </script>

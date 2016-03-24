@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!-- SC Kim Polymer Lite Kit -->
+<html>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SC's Blog | Thoughts On Polymer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#2E7D32">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="thumbnail" content="http://i1156.photobucket.com/albums/p580/whitefang3456/Technical-Polymer.jpg">
+    <meta name="og:image" content="http://i1156.photobucket.com/albums/p580/whitefang3456/Technical-Polymer.jpg">
+    <!--     <base href="http://polygit.org/polymer+:master/components/"> -->
+    <!-- <link href="polymer/polymer.html" rel="import"> -->
+    <!-- <link href="http://polygit.org/polymer+:master/components/paper-material/paper-material.html" rel="import">
+    <link href="http://polygit.org/polymer+:master/components/paper-button/paper-button.html" rel="import">
+    <link rel="import" href="http://polygit.org/polymer+:master/components/iron-icons/iron-icons.html">
+    <link href="http://polygit.org/polymer+:master/components/paper-icon-button/paper-icon-button.html" rel="import">
+    <link href="http://polygit.org/polymer+:master/components/paper-toolbar/paper-toolbar.html" rel="import">
+    <link href="http://polygit.org/polymer+:master/components/paper-item/paper-item.html" rel="import">
+    <link href="http://polygit.org/polymer+:master/components/paper-menu/paper-menu.html" rel="import">
+    <link href="http://polygit.org/polymer+:master/components/paper-styles/paper-styles-classes.html" rel="import">
+    <link href="http://polygit.org/polymer+:master/components/paper-tabs/paper-tabs.html" rel="import">
+    <link href="http://polygit.org/polymer+:master/components/paper-menu/paper-submenu.html" rel="import"> -->
+    <link href="../../../bower_components/paper-material/paper-material.html" rel="import">
+    <link href="../../../bower_components/paper-button/paper-button.html" rel="import">
+    <link href="../../../bower_components/iron-icons/iron-icons.html" rel="import">
+    <link href="../../../bower_components/paper-icon-button/paper-icon-button.html" rel="import">
+    <link href="../../../bower_components/paper-toolbar/paper-toolbar.html" rel="import">
+    <link href="../../../bower_components/paper-item/paper-item.html" rel="import">
+    <link href="../../../bower_components/paper-menu/paper-menu.html" rel="import">
+    <link href="../../../bower_components/paper-styles/paper-styles-classes.html" rel="import">
+    <link href="../../../bower_components/paper-tabs/paper-tabs.html" rel="import">
+    <link href="../../../bower_components/paper-menu/paper-submenu.html" rel="import">
+    <script src="../../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link href="../../nav-drawer-neo/nav-drawer-neo.html" rel="import">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body unresolved class="fullbleed" style="-webkit-tap-highlight-color: rgba(0,0,0,0);">
+    <div style="position:fixed;top:0px; width:100%;z-index:100;">
+        <paper-toolbar class="tall" style="background-color: #43A047;">
+            <paper-icon-button icon="menu" id="menu-toggle"></paper-icon-button>
+            <div class="title">SC's Blog
+                <iron-icon icon="chevron-right"></iron-icon>Posts
+                <iron-icon icon="chevron-right"></iron-icon>Technical</div>
+            <paper-icon-button icon="more" on-tap="{{moreAction}}"></paper-icon-button>
+        </paper-toolbar>
+    </div>
+    <!-- Normal Toolbar -->
+    <!-- <paper-toolbar style="position:fixed; width:100%; z-index:1000; 
+    box-shadow:0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);">
+    <paper-icon-button icon="menu" on-tap="{{menuAction}}"></paper-icon-button>
+    <div class="title">Title</div>
+    <paper-icon-button icon="more" on-tap="{{moreAction}}"></paper-icon-button>
+    </paper-toolbar> -->
+    <div id="backdrop"></div>
+    <div id="sidenav">
+        <nav-drawer-neo></nav-drawer-neo>
+    </div>
+    <div id="content" class="vertical layout" style="z-index:1000;-webkit-transform: translateZ(0);">
+        <paper-material elevation="1" class="rounded-fix white-paper blog-paper" style="margin-bottom:16px">
+            <div class="bottom-line" style="display:flex; padding:16px;">
+                <div class="avatar">:)</div>
+                <div class="avatar-detail">
+                    <div class="author-name">SC Kim</div>
+                    <div class="date">10th October 2015</div>
+                </div>
+            </div>
+            <div class="neo-content bottom-line">
+                <h3 class="paper-font-display2">TECHNICAL #1: Thoughts on Polymer</h3>
+                <p class="paper-font-body2">
+                    Hi Everyone again! It's been just few hours after first blog post i have made earlier. So let's get for technical for this one. Not much coding, just preview and no worries.</p>
+                <p class="paper-font-body2">
+                    For those who have known Google released interesting design guideline called Material Design (MD), which aimed to unified all frameworks across any devices including desktop, smartphones. So what i have been doing in order to implement MD. I installed Android Studio 1.4 for mobile apps development, tried Polymer for web app development using their starter kit. Building Android apps is simple when i got used to it, Everything is awesome ! Just one thing bout the web components libraries i really getting excited to test it out: Polymer.</p>
+                <h2 class="paper-font-display1">Until one day..</h2>
+                <p class="paper-font-body2">
+                    So i tried to use Polymer Starter Kit (PSK) and Material Design Lite for trying to building a site instead of mobile web app, porting components, writing contents. Until i came down to fews problem that conclude: the layout of the page itself. Polymer components are built to be accomodated with our page called <code>:host</code>. Therefore, i dealt alot things regarding starter kit such as:
+                    <ol class="paper-font-body2">
+                        <li><b>Padding/Margins: </b> For example, i ported an element called paper-card (aka card with just content) like below:</li>
+                        <div data-height="315" data-theme-id="0" data-slug-hash="Lpyjeb" data-default-tab="html" data-user="SCKim" class='codepen'><pre><code>&lt;html&gt;
+
+                            &lt;head&gt;
+                              &lt;base href=&quot;http://polygit.org/polymer+:master/components/&quot;&gt;
+                              &lt;link href=&quot;http://polygit.org/polymer+:master/components/paper-material/paper-material.html&quot; rel=&quot;import&quot;&gt;
+                            &lt;/head&gt;
+
+                            &lt;body class=&quot;fullbleed&quot;&gt;
+                              &lt;paper-material elevation=&quot;1&quot;&gt;
+                                &lt;div&gt;Hello SC!&lt;/div&gt;
+                              &lt;/paper-material&gt;
+                            &lt;/body&gt;
+
+                            &lt;/html&gt;</code></pre>
+                            <p>See the Pen <a href='http://codepen.io/SCKim/pen/Lpyjeb/'>Paper-Material Polygit</a> by SC Kim (<a href='http://codepen.io/SCKim'>@SCKim</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+                        </div>
+                        <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+                        Everything supposedly worked fine, but what if the predefined styles gone wrong, yet we can't just edit using styles nor hardcoded. What would be the worst is to touch the library's code itself? I wouldn't wanna do that every time.
+                        <br>
+                        <br>
+                        <li><b>Cross-Platform: </b> We have two ways to import components. Either we provides the components ourselves via bower to host, or we can directly callback import into our html from Polygit (Server of Polymer Components) which hosted in Github. Polygit still great yet light for us to import but make us dependable. Because i do concern about page speed and performance so i choose 1st method. Good news is most of the components can work in multiple browsers using Polyfills for custom Elements, HTML Imports and Shadow DOM ! Which is better? I can't decide for you, is the best for you to try it out</li>
+                        <br>
+                        <li><b>Components Dependencies: </b> Material Design components do have multiple layers of components dependent to each other. For example, a FAB (Floating Action Button) has at least three layers of components reused: <code>&lt;paper-ripple> , &lt;iron-icon&gt;, &lt;paper-material&gt;</code>. So if you added some styling or making changes one of the components. You will get something like this, ouch? That's not it, assuming every components that you used will be affected along the changes: DISASTROUS. </li>
+                        <br>
+                        <div class="row" style="margin-bottom:8px;">
+                            <li style="padding-right:16px;"><b>Panel structures, it's abit messed up:</b> If you wished to create site with app-drawer/navigation drawer, Polymer did provided few: <code>&lt;paper-header-panel> , &lt;paper-scroll-header-panel&gt;, &lt;paper-drawer-panel&gt;</code> When you used any of the two combined, you will get most of the layout well-designed. However, you will pissed off when u scroll your contents like this in any mobile browsers. <br><br>
+                            How did it happened? Why Chrome Address Bar doesn't hide after scroll! Even Safari and Firefox mobile browser showing same anomalities. No matter what kinda magic hacks of Javascript, styling, meta-tags or any adjustments, you still can't get it UP! 
+                                <br>
+                                <br> </li>
+                            <div style="display:flex; flex-direction:column; align-items:center;">
+                                <img class="screenshot-img" id="PSK-1" height="auto" src="../../images/polymer-starter-kit-prob.gif">
+                                <span class="paper-font-caption image-caption">Buggy Address Bar</span></div>
+                        </div>
+                        <div class="row" style="margin-bottom:8px;">
+                            <span class="paper-font-body2" style="padding-right:16px;">So here's how that panel components work for my hypothesis. Every content of yours will be contained under panel itself instead of being independent. To be more evident, you may view the screnshoots below. The blue themed was build using the panel elements while red-themed was build without the panel, you may see significant differences in left-rulerview or dark-overflow contents below the red-themed page.<br><br>
+                            That's why browser doesn't recognize the contents is whether overflowed or just fit the screen. So the whole layout will never be overflow and the address bar will never dissapear no matter how hard you've scrolled. So what's the solution then? Don't use the panels, refactor yourself. I took few days to figure it out until i check other overflow mobile sites with F12 Chrome Developer Tools..Dang..Although you may seek this as small matters in phablet/giant size phones, but as a web developer, it is essential to assume our mobile sites are accessible yet convenient even for small sizes like 3.5-inches size phones.</span>
+                            <div>
+                            <div class="screenshot-container" style="margin:0px;">
+                                <img class="screenshot-img" height="360px" src="../../images/polymer-starter-kit-prob2.gif">
+                                <img class="screenshot-img" height="360px" src="../../images/neo-polymer-kit-fix.gif">
+                                </div>
+                            <span class="paper-font-caption image-caption">Overflow Failed (Blue) and Overflow (Red)</span></div>
+                        </div><br>
+                       <!--  <p class="paper-font-body2">Thats why browser doesn't recognize the contents is whether overflowed or just fit the screen. So the whole layout will never be overflow and the address bar will never dissapear no matter how hard you've scrolled. So what's the solution then? Don't use the panels, refactor yourself. I took few days to figure it out until i check other overflow mobile sites with F12 Chrome Developer Tools..Dang..Although you may seek this as small matters in phablet/giant size phones, but as a web developer, it is essential to assume our mobile sites are accessible yet convenient even for small sizes like 3.5-inches size phones.</p> -->
+                        <li><b>Routing :</b> Depends how you starts with your application, if you starts from Polymer Starter Kit, which will focus on single page app, instead of loading multiple-pages. It's similar as Fragment in Android Activity. So if your <code>href</code> is mismatch as routing.js or you "open link in new tab" in PSK. You'll most probably get error.</li>
+                        <br>
+                        <li><b>MD Guidelines :</b> Not all components follow completely guidelines &amp; examples of Material Design. Some might missed typography, measurements or components positioning and etc.</li>
+                        <br>
+                    </ol>
+                    <h2 class="paper-font-display1">So, what's the conclusion and advice for future Polymer starters?</h2>
+                    <p class="paper-font-body2">
+                        So what'd i like to give an advice if you planned to use the components:</p>
+                    <ul ol class="paper-font-body2">
+                        <li>First, check the components whether following the guidelines, otherwise send a issue to github so they could review it.</li>
+                        <li>Next, you need your F12 key alot to debug the components and check layer-by-layer embedded within it.</li>
+                        <li> Lastly if you don't feel like to use the components, make your new one! That's why Polymer is awesome !</li>
+                    </ul>
+                    <p class="paper-font-body2">For those who're interested getting a simple,lite template (i Called it <b>neo-PolyKit!</b>) from me, i will post it up along with setup guidelines installing your own gulp and bower localhost soon enough. So stay tune for my updates.
+                        <br>
+                        <br>That's all for my first technical page for today! Until Next time Peeps! </p>
+            </div>
+        </paper-material>
+    </div>
+</body>
+
+</html>
+</body>
+<script type="text/javascript" src="https://rawgit.com/ubenzer/sidenavjs/master/dist/sidenav.min.js"></script>
+<script src="../../js/index.js"></script>
+
+</html>

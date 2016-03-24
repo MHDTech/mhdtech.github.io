@@ -1,0 +1,75 @@
+<!--
+Made by 2015 SC Kim. All rights reserved.
+-->
+<link href="../../bower_components/paper-menu/paper-submenu.html" rel="import">
+<link href="../../bower_components/paper-menu/paper-menu.html" rel="import">
+<link href="../../bower_components/paper-item/paper-item.html" rel="import">
+<link href="../../bower_components/paper-toolbar/paper-toolbar.html" rel="import">
+<dom-module id="nav-drawer-neo">
+    <style>
+    :host {
+        display: block;
+    }
+    .footer{
+    color: #656565;
+    bottom: 0px;
+    padding: 16px;
+    font-size: 12px;
+    border-top: 1px solid #e1e1e1;
+    width: 224px;
+    position:absolute;bottom:0px;
+    }
+
+    @media only screen and (max-height: 420px) and (orientation:landscape) {
+        .footer{position:relative;}
+    }
+
+    @media only screen and (orientation:portrait) {
+        .footer{position:absolute;bottom:0px;}
+    }
+
+    paper-menu{
+        overflow-y:auto; 
+    }
+    </style>
+    <template>
+    <div class="paper-font-title bottom-line">
+            <paper-toolbar style="background-color:#fff;">
+                <p class="paper-font-title" style="color:#9e9e9e">Menu</p>
+            </paper-toolbar>
+        </div>
+        <paper-menu>
+        
+            <a href="#"><paper-item active>Home</paper-item></a>
+            <a href="#"><paper-item active>About</paper-item></a>
+            <paper-submenu>
+                <paper-item class="menu-trigger">Our Products</paper-item>
+                <paper-menu class="menu-content" style="margin-left:40px; padding:0px;">
+                    <a href="/"><paper-item>EnerFlex Original</paper-item></a>
+                    <paper-item disabled>EnerFlex AFA</paper-item>
+                    <paper-item disabled>EnerFlex Plus</paper-item>
+                </paper-menu>
+            </paper-submenu>
+            <paper-submenu>
+                <paper-item class="menu-trigger">Clinical Stations</paper-item>
+                <paper-menu class="menu-content" style="margin-left:40px;">
+                    <paper-item disabled>#1: Things around me these days</paper-item>
+                    <!--           <paper-item>Topic 2</paper-item>
+          <paper-item>Topic 3</paper-item> -->
+                </paper-menu>
+            </paper-submenu>
+
+            <a href="#"><paper-item active>Downloads</paper-item></a>
+            <a href="#"><paper-item active>Contact</paper-item></a>
+        </paper-menu>
+
+        <div class="footer">Designed By SC.Kim © 2015</div>
+    </template>
+</dom-module>
+<script>
+(function() {
+    Polymer({
+        is: 'nav-drawer-neo'
+    });
+})();
+</script>

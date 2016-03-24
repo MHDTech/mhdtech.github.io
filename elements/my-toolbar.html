@@ -1,0 +1,112 @@
+<dom-module id="my-toolbar">
+    <style>
+    :host {
+        display: block;
+        height: 40px;
+        width: 100%;
+        text-align: center;
+    }
+    #menu-toggle {
+    color: #333;
+    float: left;
+    height: 24px;
+    width: 24px;
+    margin-right:0px;
+}
+
+    paper-icon-button{
+        height: 24px;
+    }
+    #img-container {
+        display:inline-block;
+        margin-left: -24px;
+    }
+    
+    #banner {
+        height: 40px;
+    }
+    
+    #navBar {
+        position: fixed;
+        right: 16px;
+        display: block;
+        top: 8px;
+        width: 368px;
+    }
+
+    paper-tab:hover {
+    background: rgba(247, 148, 30, 0.1);
+	}
+
+    .tab-content.paper-tab > a {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+    
+    .orange {color: #F7941E;}
+    
+    @media only screen and (min-width: 0px) and (max-width: 480px) and (orientation:portrait) {
+        #navBar {display: none;}
+    }
+
+    @media only screen and (min-width: 480px) and (max-width: 768px) and (orientation:portrait) {
+        #navBar {display: none;}
+    }
+    
+    @media only screen and (min-width: 0px) and (max-width: 768px) {
+        #banner {height: 36px;}
+    }
+    
+    @media only screen and (max-width: 768px) and (orientation:landscape) {
+        #banner {height: 36px;}
+        #navBar {display: none;}
+    }
+    
+    @media only screen and (min-width: 769px) {
+        #menu-toggle {
+        display: none;
+    }
+
+    #img-container {
+        display:flex;
+        margin-left: 0px;
+    }
+    }
+    </style>
+    <template>
+        <div id="menu-toggle" onclick="myFunction()"><paper-icon-button icon="menu" ></paper-icon-button></div>
+        <div id="img-container"><img id="banner" src="/images/mhd-bannerlogo.png"></div>
+        <div id="navBar">
+            <paper-tabs selected="0" class="orange" no-bar>
+                <paper-tab><a href="#">About</a></paper-tab>
+                <paper-tab><a href="#">eStore</a></paper-tab>
+                <paper-tab><a href="#product-sc">Products</a></paper-tab>
+                <paper-tab><a href="#download-sc">Downloads</a></paper-tab>
+                <paper-tab><a href="#contact">Contact</a></paper-tab>
+            </paper-tabs>
+        </div>
+    </template>
+</dom-module>
+<script>
+(function() {
+    Polymer({
+        is: 'my-toolbar',
+    });
+})();
+</script>
+
+<script>
+function myFunction() {
+    var sidenav = new Sidenav({
+  content: document.getElementById("content"),
+  sidenav: document.getElementById("sidenav"),
+  backdrop: document.getElementById("backdrop")
+});
+
+document.getElementById("menu-toggle").addEventListener("click", function() {
+  sidenav.open();
+}, true);
+
+}
+</script>
